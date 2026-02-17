@@ -1,0 +1,17 @@
+.PHONY: smoke test lint typecheck check ci
+
+smoke:
+	@./scripts/harness/smoke.sh
+
+test:
+	@./scripts/harness/test.sh
+
+lint:
+	@./scripts/harness/lint.sh
+
+typecheck:
+	@./scripts/harness/typecheck.sh
+
+check: lint typecheck
+
+ci: smoke check test

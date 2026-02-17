@@ -1,0 +1,22 @@
+name: Harness CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  harness:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Add language/runtime setup steps as needed for this repository.
+      # Examples:
+      # - actions/setup-node@v4
+      # - actions/setup-python@v5
+      # - dtolnay/rust-toolchain@stable
+
+      - name: Run harness pipeline
+        run: make ci

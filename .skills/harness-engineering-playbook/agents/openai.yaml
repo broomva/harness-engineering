@@ -1,0 +1,4 @@
+interface:
+  display_name: "Harness Engineering Playbook"
+  short_description: "OpenAI harness patterns for agent workflows"
+  default_prompt: "Analyze this repository and set up harness engineering workflows, docs, and automation following OpenAI Harness Engineering principles."
