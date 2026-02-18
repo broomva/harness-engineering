@@ -3,7 +3,7 @@ set -euo pipefail
 
 usage() {
   cat <<'EOF'
-Usage: audit_harness.sh [repo_path]
+Usage: scripts/audit_harness.sh [repo_path]
 
 Audit a repository for baseline harness engineering artifacts.
 EOF

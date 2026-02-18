@@ -79,6 +79,7 @@ templates=(
   "docs/ARCHITECTURE.md"
   "docs/OBSERVABILITY.md"
   "Makefile.harness"
+  "scripts/audit_harness.sh"
   "scripts/harness/smoke.sh"
   "scripts/harness/test.sh"
   "scripts/harness/lint.sh"
@@ -108,6 +109,7 @@ else
 fi
 
 chmod +x \
+  "$target_path/scripts/audit_harness.sh" \
   "$target_path/scripts/harness/smoke.sh" \
   "$target_path/scripts/harness/test.sh" \
   "$target_path/scripts/harness/lint.sh" \
@@ -118,4 +120,4 @@ echo "Bootstrap complete."
 echo "Next:"
 echo "  1) Customize commands in scripts/harness/*.sh"
 echo "  2) Update AGENTS.md and docs/* placeholders"
-echo "  3) Run scripts/audit_harness.sh \"$target_path\""
+echo "  3) cd \"$target_path\" && scripts/audit_harness.sh ."

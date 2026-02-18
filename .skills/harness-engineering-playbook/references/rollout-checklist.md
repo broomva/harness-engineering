@@ -11,7 +11,7 @@ Use this staged checklist when integrating the harness into an existing reposito
 
 ## Phase 1: Bootstrap
 
-- [ ] Run `scripts/bootstrap_harness.sh <repo-path>`.
+- [ ] Run `python3 scripts/harness_wizard.py init <repo-path> --profile control`.
 - [ ] Verify generated files are present.
 - [ ] Customize template placeholders for project-specific commands.
 - [ ] Confirm `Makefile` includes `Makefile.harness`.
@@ -27,7 +27,7 @@ Use this staged checklist when integrating the harness into an existing reposito
 ## Phase 3: Automation + Entropy Control
 
 - [ ] Enable `.github/workflows/harness.yml` (or equivalent CI job).
-- [ ] Run `scripts/audit_harness.sh <repo-path>` in CI.
+- [ ] Run `python3 scripts/harness_wizard.py audit <repo-path>` in CI.
 - [ ] Add periodic review cadence for docs/scripts drift.
 - [ ] Remove stale scripts and outdated docs to keep context clean.
 

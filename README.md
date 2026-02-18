@@ -13,3 +13,11 @@ npx skills add broomva/harness-engineering-skill --skill harness-engineering-pla
 ## Skill Source
 
 - OpenAI Harness Engineering guide: https://openai.com/index/harness-engineering/
+
+## Included Wizard
+
+The skill includes a Typer CLI wizard:
+
+```bash
+python3 .agents/skills/harness-engineering-playbook/scripts/harness_wizard.py --help
+```

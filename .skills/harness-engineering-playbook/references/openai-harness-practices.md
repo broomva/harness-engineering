@@ -30,3 +30,7 @@ This file maps each practice from OpenAI's Harness Engineering guidance to concr
 3. Keep scripts deterministic and machine-readable.
 4. Keep architecture boundaries explicit and reviewed during refactors.
 5. Keep observability fields stable to support aggregation and replay.
+
+## Wizard Entry Point
+
+Use `scripts/harness_wizard.py` as the stable orchestration layer for bootstrap, primitive upgrades, and auditing.

@@ -1,0 +1,29 @@
+version: 1
+setpoints:
+  pr_pass_at_1:
+    target: 0.70
+    alert_below: 0.55
+  merge_cycle_time_hours:
+    target: 24
+    alert_above: 48
+  revert_rate:
+    target: 0.03
+    alert_above: 0.08
+  human_intervention_rate:
+    target: 0.20
+    alert_above: 0.40
+  time_to_actionable_failure_minutes:
+    target: 10
+    alert_above: 30
+
+measurements:
+  - name: pr_pass_at_1
+    source: ci
+  - name: merge_cycle_time_hours
+    source: scm
+  - name: revert_rate
+    source: scm
+  - name: human_intervention_rate
+    source: review
+  - name: time_to_actionable_failure_minutes
+    source: ci

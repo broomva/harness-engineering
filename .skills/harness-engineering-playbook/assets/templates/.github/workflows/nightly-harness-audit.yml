@@ -1,0 +1,21 @@
+name: Nightly Harness Audit
+
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Add runtime setup steps required for this repository.
+
+      - name: Baseline harness audit
+        run: scripts/audit_harness.sh .
+
+      - name: Entropy check
+        run: scripts/harness/entropy_check.sh

@@ -11,6 +11,7 @@ Use this skill to operationalize the practices from OpenAI's Harness Engineering
 
 - Use `references/openai-harness-practices.md` for the full practice-to-artifact mapping.
 - Use `references/rollout-checklist.md` for phased adoption in active repos.
+- Use `references/wizard-cli.md` for Typer wizard command flows.
 - Use `assets/templates/` when creating or updating harness files.
 
 ## Inputs
@@ -37,6 +38,20 @@ Use a short baseline note inside `PLANS.md` so decisions remain durable.
 
 ## Step 2: Bootstrap Harness Artifacts
 
+Preferred entrypoint:
+
+```bash
+python3 scripts/harness_wizard.py init <repo-path> --profile control
+```
+
+Profiles:
+
+- `baseline`: only core harness artifacts.
+- `control`: baseline + control-system primitives.
+- `full`: control + entropy controls (nightly audit + entropy checks).
+
+Direct shell fallback:
+
 Run:
 
 ```bash
@@ -50,6 +65,7 @@ This script installs safe defaults from `assets/templates/`:
 - `docs/ARCHITECTURE.md`
 - `docs/OBSERVABILITY.md`
 - `Makefile.harness` (+ `-include Makefile.harness` in `Makefile`)
+- `scripts/audit_harness.sh`
 - `scripts/harness/{smoke,test,lint,typecheck}.sh`
 - `.github/workflows/harness.yml`
 
@@ -120,7 +136,7 @@ For a detailed artifact matrix, load `references/openai-harness-practices.md`.
 Run:
 
 ```bash
-./scripts/audit_harness.sh <repo-path>
+python3 scripts/harness_wizard.py audit <repo-path>
 ```
 
 Treat any `MISSING` or `FAIL` result as blocking before calling harness setup complete.
