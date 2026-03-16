@@ -7,7 +7,7 @@ This repository publishes a `skills.sh`-compatible skill:
 ## Install
 
 ```bash
-npx skills add broomva/harness-engineering-skill --skill harness-engineering-playbook
+npx skills add broomva/harness-engineering --skill harness-engineering-playbook
 ```
 
 ## Skill Source
